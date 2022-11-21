@@ -19,11 +19,17 @@ export const FlexColumn = styled.div`
 `
 export const Box = styled.div`
     padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    &:hover{
+        background-color: #ffa07a71;
+    }
+`
+export const PaginatorBox = styled(Box)`
     border-right: 1px solid grey;
     &:last-child{
         border-right: none;
-    }
-    &:hover{
-        background-color: #ffa07a71;
     }
 `

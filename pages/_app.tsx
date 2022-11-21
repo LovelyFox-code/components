@@ -3,9 +3,16 @@ import type { AppProps } from 'next/app'
 import { Box, FlexColumn, Row, Section } from '../components/common/Common'
 import Link from 'next/link'
 import { H1 } from '../components/Typography/Typography'
+import styled from 'styled-components'
+
 const elements = ["paginator", "accordion", "tooltip"]
+export const Main = styled.div`
+  max-width: 1120px;
+  width: 90%;
+  margin: auto;
+`
 export default function App({ Component, pageProps }: AppProps) {
-  return <>
+  return <Main>
     <Section>
       <H1>Components</H1>
     </Section>
@@ -19,6 +26,5 @@ export default function App({ Component, pageProps }: AppProps) {
       </FlexColumn>
       <Component {...pageProps} />
     </Row>
-
-  </>
+  </Main>
 }
