@@ -9,9 +9,14 @@ export const Container = styled.div`
     width: fit-content;
     border-radius: 5px;
 `
+export const AccordionContainer = styled(Container)`
+    width: 100%;
+    display: block;
+`
 export const Row = styled.div`
     display: flex;
     align-items: center;
+    gap: 10%;
 `
 export const FlexColumn = styled.div`
     display: flex;
@@ -32,4 +37,19 @@ export const PaginatorBox = styled(Box)`
     &:last-child{
         border-right: none;
     }
+`
+export const AccordionBox = styled(Box)`
+    width: 100%;
+    
+`
+export const TooltipBox = styled(Box)`
+    border: 1px solid grey;
+    display: flex;
+    width: fit-content;
+    border-radius: 5px;
+    position:absolute;
+    top: -40px;
+    right: 30px;
+    background-color: black;
+    color: white;
 `
