@@ -1,12 +1,5 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import styled from 'styled-components'
-import { Box, FlexColumn, Row, Section } from '../components/common/Common'
-import { H1 } from '../components/Typography/Typography'
-import styles from '../styles/Home.module.css'
-
-
-
 
 export default function Home() {
   const router = useRouter()

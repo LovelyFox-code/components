@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { H1 } from '../components/Typography/Typography'
 import styled from 'styled-components'
 
-const elements = ["paginator", "accordion", "tooltip"]
+const elements = ["paginator", "accordion", "tooltip", "ignobal"]
 export const Main = styled.div`
   max-width: 1120px;
   width: 90%;

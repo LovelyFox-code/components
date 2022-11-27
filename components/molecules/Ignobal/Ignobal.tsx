@@ -1,17 +1,15 @@
 import React from 'react'
 import { PaginatorBox } from '../../common/Common'
 
-interface IPaginatorProps {
+interface IIgnobalProps {
     pages: number[],
     isActive: number,
-    setIsActive: React.Dispatch<React.SetStateAction<number>>,
-    fetchYearData: () => Promise<void>,
+    setIsActive: React.Dispatch<React.SetStateAction<number>>
 
 }
-const Paginator: React.FC<IPaginatorProps> = (props) => {
+const Ignobal: React.FC<IIgnobalProps> = (props) => {
     const handleClick = (page: number) => {
         props.setIsActive(page);
-        props.fetchYearData();
     };
     return (
         <>
@@ -23,4 +21,4 @@ const Paginator: React.FC<IPaginatorProps> = (props) => {
         </>
     )
 }
-export default Paginator
+export default Ignobal

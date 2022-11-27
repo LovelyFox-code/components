@@ -1,25 +1,31 @@
 import React from 'react'
 import styled from 'styled-components';
-import { Box, Container, TooltipBox } from '../../common/Common'
+import { Box, Container, TooltipBox, TTooltipPosition } from '../../common/Common'
 
 export const TooltipContainer = styled.div`
   position: relative;
-  width: 230px;
+  display: inline-block;
+  
 `
 interface ITooltipProps {
-    isClicked: boolean,
-    setIsClicked: React.Dispatch<React.SetStateAction<boolean>>
+    positions: TTooltipPosition[],
+    isClicked: string,
+    setIsClicked: React.Dispatch<React.SetStateAction<string>>
 
 }
 const Tooltip: React.FC<ITooltipProps> = (props) => {
-    const handleClick = () => {
-        props.setIsClicked(!props.isClicked);
+    const handleClick = (position: string) => {
+        props.setIsClicked(position);
+        console.log(position);
+
     };
     return (
-        <TooltipContainer>
-            <Container onClick={() => handleClick()}><Box>Tooltip</Box></Container>
-            {props.isClicked ? <TooltipBox>Some advise</TooltipBox> : ""}
-        </TooltipContainer>
+        <>
+            {props.positions.map(position => <TooltipContainer>
+                <Container onClick={() => handleClick(position)}><Box>Tooltip</Box></Container>
+                {props.isClicked === position ? <TooltipBox variant={position}>Some advise</TooltipBox> : ""}
+            </TooltipContainer>)}
+        </>
     )
 }
 export default Tooltip
